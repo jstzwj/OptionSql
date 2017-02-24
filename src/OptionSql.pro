@@ -10,7 +10,10 @@ SOURCES += main.cpp \
     iomethod.cpp \
     optioninstance.cpp \
     encoding.cpp \
-    blockbuffer.cpp
+    blockbuffer.cpp \
+    errcode.cpp \
+    queryresult.cpp \
+    settings.cpp
 
 HEADERS += \
     optionvalue.h \
@@ -19,4 +22,8 @@ HEADERS += \
     iomethod.h \
     optioninstance.h \
     encoding.h \
-    blockbuffer.h
+    blockbuffer.h \
+    errcode.h \
+    queryresult.h \
+    settings.h \
+    platform.h

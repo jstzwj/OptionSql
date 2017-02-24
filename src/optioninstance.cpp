@@ -11,5 +11,10 @@ namespace optionsql
     {
 
     }
+
+    QueryResult OptionInstance::exec(const std::string &sql, const std::string &encoding)
+    {
+
+    }
 }
 

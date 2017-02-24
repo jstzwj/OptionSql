@@ -3,6 +3,7 @@
 
 #include<string>
 #include"encoding.h"
+#include"queryresult.h"
 namespace optionsql
 {
     class OptionInstance
@@ -10,6 +11,7 @@ namespace optionsql
     public:
         OptionInstance();
         OptionInstance(const std::string & fileName,const std::string & encoding);
+        QueryResult exec(const std::string & sql,const std::string & encoding);
     };
 }
 

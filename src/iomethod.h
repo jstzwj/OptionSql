@@ -6,30 +6,24 @@ namespace optionsql
     class IoMethod
     {
     public:
-        IoMethod();
-        int xClose();
-        int xRead(void*, int iAmt, int64_t iOfst);
-        int xWrite(const void*, int iAmt, int64_t iOfst);
-        int xTruncate(int64_t size);
-        int xSync(int flags);
-        int xFileSize(int64_t *pSize);
-        int xLock(int);
-        int xUnlock(int);
-        int xCheckReservedLock(int *pResOut);
-        int xFileControl(int op, void *pArg);
-        int xSectorSize();
-        int xDeviceCharacteristics();
-        /* Methods above are valid for version 1 */
-        int xShmMap(int iPg, int pgsz, int, void volatile**);
-        int xShmLock(int offset, int n, int flags);
-        void xShmBarrier();
-        int xShmUnmap(int deleteFlag);
-        /* Methods above are valid for version 2 */
-        int xFetch(int64_t iOfst, int iAmt, void **pp);
-        int xUnfetch(int64_t iOfst, void *p);
-        /* Methods above are valid for version 3 */
-        /* Additional methods may be added in future releases */
+        IoMethod()=default;
+        virtual ~IoMethod(){}
+        virtual int open(int flags)=0;
+        virtual int close()=0;
+        virtual int read(char *buffer, int readLen, int64_t offset)=0;
+        virtual int write(const char *buffer, int writeLen, int64_t offset)=0;
+        virtual int truncate(int64_t size)=0;
+        virtual int sync(int flags)=0;
+        virtual int fileSize(int64_t *pSize)=0;
+        virtual int lock(int)=0;
+        virtual int unlock(int)=0;
+        virtual int checkReservedLock(int *pResOut)=0;
+        virtual int fileControl(int op, void *pArg)=0;
+        virtual int sectorSize()=0;
+        virtual int deviceCharacteristics()=0;
     };
+
+
 }
 
 
