@@ -18,13 +18,8 @@ namespace optionsql
         void *pAppData;          /* Pointer to application-specific data */
         virtual int open(File& file,int flags)=0;
         virtual int close(File& file)=0;
-        virtual int del(int syncDir)=0;
-        virtual int access(int flags, int *pResOut)=0;
-        virtual int fullPathname(int nOut, char *zOut)=0;
-        //void *DlOpen(const std::string &zFilename);
-        //void DlError(int nByte, char *zErrMsg);
-        //void DlSym(void*, const char *zSymbol)(void);
-        //void DlClose(void*);
+        virtual int del(const std::string & path)=0;
+        virtual bool access(const std::string & path)=0;
         //int Randomness(int nByte, char *zOut);
         //int Sleep(int microseconds);
         //int CurrentTime(double*);
@@ -45,9 +40,8 @@ namespace optionsql
         virtual ~WindowsFileSystem(){}
         virtual int open(File& file, int flags);
         virtual int close(File& file);
-        virtual int del(int syncDir);
-        virtual int access(int flags, int *pResOut);
-        virtual int fullPathname(int nOut, char *zOut);
+        virtual int del(const std::string & path);
+        virtual bool access(const std::string & path);
     };
     using FileSystem=WindowsFileSystem;
 #endif

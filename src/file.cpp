@@ -17,7 +17,7 @@ namespace optionsql
 
     int WindowsFile::open(int flags)
     {
-        MessageBoxA(NULL, "打开文件失败", "Error", MB_OK);
+        //MessageBox(NULL, L"打开文件失败", L"Error", MB_OK);
         DWORD dwDesiredAccess=0;
         DWORD dwCreationDisposition=OPEN_EXISTING;
         DWORD dwFlagsAndAttributes=FILE_ATTRIBUTE_NORMAL;
@@ -41,12 +41,12 @@ namespace optionsql
                 dwFlagsAndAttributes, NULL);
         if(pfile!=INVALID_HANDLE_VALUE)
         {
-            CloseHandle(pfile);
-            return OPTIONSQL_FILE_ERROR_OPEN;
+            return OPTIONSQL_GOOD;
         }
         else
         {
-            return OPTIONSQL_GOOD;
+            CloseHandle(pfile);
+            return OPTIONSQL_FILE_ERROR_OPEN;
         }
     }
 
@@ -154,22 +154,22 @@ namespace optionsql
 
     int WindowsFile::checkReservedLock(int *pResOut)
     {
-
+        return OPTIONSQL_GOOD;
     }
 
     int WindowsFile::fileControl(int op, void *pArg)
     {
-
+        return OPTIONSQL_GOOD;
     }
 
     int WindowsFile::sectorSize()
     {
-
+        return OPTIONSQL_GOOD;
     }
 
     int WindowsFile::deviceCharacteristics()
     {
-
+        return OPTIONSQL_GOOD;
     }
 #endif
 

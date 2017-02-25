@@ -13,7 +13,8 @@ SOURCES += main.cpp \
     blockbuffer.cpp \
     errcode.cpp \
     queryresult.cpp \
-    settings.cpp
+    settings.cpp \
+    logerror.cpp
 
 HEADERS += \
     optionvalue.h \
@@ -26,4 +27,5 @@ HEADERS += \
     errcode.h \
     queryresult.h \
     settings.h \
-    platform.h
+    platform.h \
+    logerror.h

@@ -2,6 +2,7 @@
 #define SETTINGS_H
 #include<string>
 #include<memory>
+#include<iostream>
 #include"filesystem.h"
 namespace optionsql
 {
