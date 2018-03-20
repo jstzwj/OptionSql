@@ -221,4 +221,6 @@
 #	define new new(_CLIENT_BLOCK, __FILE__, __LINE__)
 #endif
 
+#define OPTIONSQL_API OPTIONSQL_CALL
+
 #endif
