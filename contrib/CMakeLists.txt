@@ -1,13 +1,11 @@
 INCLUDE_DIRECTORIES(${OPTIONSQL_LIBRARY_OUTPUT_PATH})
 
-SET(gflags_DIR ${OPTIONSQL_PATH_DEPENDENCIES}/gflags)
-SET(OPENSSL_ROOT_DIR "C:/Users/WangJun/Documents/libraries/openssl-0.9.8h-1-lib")
+SET(gflags_DIR C:/Users/WangJun/Documents/libraries/gflags/bin)
+SET(OPENSSL_ROOT_DIR C:/Users/WangJun/Documents/libraries/openssl-0.9.8h-1-lib)
 
-ADD_SUBDIRECTORY(gflags)
 ADD_SUBDIRECTORY(glog)
 ADD_SUBDIRECTORY(libevent)
 
-SET_TARGET_ATTRIBUTE(gflags "contrib")
 SET_TARGET_ATTRIBUTE(glog "contrib")
 SET_TARGET_ATTRIBUTE(event "contrib")
 
